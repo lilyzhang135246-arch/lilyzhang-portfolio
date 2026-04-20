@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Name – Portfolio</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px;
+      background: rgba(0,0,0,0.7);
+      text-align: center;
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 120px 10%;
+      min-height: 100vh;
+      gap: 60px;
+    }
+
+    .section img {
+      width: 50%;
+      max-width: 600px;
+      transition: transform 0.3s ease;
+    }
+
+    .section img:hover {
+      transform: scale(1.03);
+    }
+
+    .text {
+      width: 40%;
+    }
+
+    .title {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .desc {
+      font-size: 16px;
+      opacity: 0.7;
+    }
+
+    /* alternate layout */
+    .reverse {
+      flex-direction: row-reverse;
+    }
+
+    /* mobile fix */
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .reverse {
+        flex-direction: column;
+      }
+
+      .section img, .text {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  YOUR NAME
+</header>
+
+<div class="section">
+  <img src="art1.jpg">
+  <div class="text">
+    <div class="title">Boarding Passes</div>
+    <div class="desc">Mixed media exploration of identity and movement.</div>
+  </div>
+</div>
+
+<div class="section reverse">
+  <img src="art2.jpg">
+  <div class="text">
+    <div class="title">Ketchup Chips</div>
+    <div class="desc">Hyper-real drawing of a nostalgic object.</div>
+  </div>
+</div>
+
+<div class="section">
+  <img src="art3.jpg">
+  <div class="text">
+    <div class="title">Dumplings</div>
+    <div class="desc">Sculptural reflection on family and absence.</div>
+  </div>
+</div>
+
+</body>
+</html>
