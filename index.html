@@ -33,20 +33,9 @@
   gap: 50px;
 }
 
-    .section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
     .section img {
       width: 50%;
-      max-width: 600px;
+      max-width: 900px;
       transition: transform 0.3s ease;
     }
 
@@ -55,7 +44,7 @@
     }
 
     .text {
-      width: 40%;
+      width: 30%;
     }
 
     .title {
@@ -227,22 +216,5 @@
   </div>
 </div>
 
-  <script>
-  const sections = document.querySelectorAll('.section');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  sections.forEach(section => {
-    observer.observe(section);
-  });
-</script>
 </body>
 </html>
