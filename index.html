@@ -5,6 +5,11 @@
   <title>Lily Zhang – Portfolio</title>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
     body {
       margin: 0;
       background: #000;
@@ -23,7 +28,48 @@
   letter-spacing: 6px;
   font-weight: 500;
   font-family: Helvetica, sans-serif;
+
+  /* Added navigation styling */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
 }
+
+  .logo {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    gap: 35px;
+  }
+
+  nav a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 3px;
+    transition: color 0.2s ease;
+  }
+
+  nav a:hover {
+    color: #fff;
+  }
+
+  .page-section {
+    padding-top: 40px;
+  }
+
+  .section-heading {
+    padding: 100px 10% 15px;
+    font-size: 12px;
+    letter-spacing: 6px;
+    color: rgba(255, 255, 255, 0.5);
+  }
 
  .section {
   display: flex;
@@ -63,8 +109,170 @@
       flex-direction: row-reverse;
     }
 
+    /* Design section */
+    .design-project {
+      margin: 40px 10% 120px;
+      padding: 60px;
+      background: #0b0b0b;
+      border: 1px solid #222;
+    }
+
+    .design-label {
+      font-size: 12px;
+      letter-spacing: 4px;
+      color: #6c8cff;
+      margin-bottom: 20px;
+    }
+
+    .design-title {
+      font-size: clamp(42px, 7vw, 90px);
+      font-weight: bold;
+      line-height: 0.95;
+      max-width: 900px;
+      margin-bottom: 30px;
+    }
+
+    .design-description {
+      max-width: 650px;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid #fff;
+      padding-bottom: 5px;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+
+       /* Design project photo galleries */
+    .project-gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 15px;
+      margin-top: 45px;
+    }
+
+    .project-gallery img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+      background: #151515;
+      transition: transform 0.3s ease;
+    }
+
+    .project-gallery img:first-child {
+      object-fit: contain;
+    }
+
+    .project-gallery img:hover {
+      transform: scale(1.015);
+    }
+
+    .project-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid #292929;
+    }
+
+    .project-detail {
+      min-width: 150px;
+    }
+
+    .project-detail-title {
+      margin-bottom: 8px;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 10px;
+      letter-spacing: 3px;
+    }
+
+    .project-detail-text {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .project-note {
+      margin-top: 20px;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    
+    /* About section */
+    .about {
+      margin: 40px 10% 120px;
+      max-width: 850px;
+    }
+
+    .about h2 {
+      font-size: clamp(42px, 7vw, 85px);
+      margin-bottom: 30px;
+    }
+
+    .about p {
+      font-size: 20px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 45px;
+    }
+
+    .contact-links a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+      padding-bottom: 6px;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .contact-links a:hover {
+      border-color: #fff;
+    }
+
+    footer {
+      padding: 35px 10%;
+      border-top: 1px solid #222;
+      color: #666;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
     /* mobile fix */
     @media (max-width: 768px) {
+      header {
+        padding: 18px 5%;
+      }
+
+      .logo {
+        font-size: 10px;
+        letter-spacing: 3px;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      nav a {
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
       .section {
         flex-direction: column;
         text-align: center;
@@ -77,6 +285,33 @@
       .section img, .text {
         width: 100%;
       }
+
+      .design-project {
+        margin: 20px 5% 80px;
+        padding: 30px 25px;
+      }
+
+      .about {
+        margin: 20px 7% 80px;
+      }
+
+      .about p {
+        font-size: 17px;
+      }
+            .project-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .project-gallery img {
+        height: auto;
+        max-height: 500px;
+        object-fit: contain;
+      }
+
+      .project-details {
+        flex-direction: column;
+        gap: 22px;
+      }
     }
 
   </style>
@@ -85,8 +320,19 @@
 <body>
 
 <header>
-  LILY ZHANG ARTIST PORTFOLIO
+  <a class="logo" href="#art">LILY ZHANG ARTIST PORTFOLIO</a>
+
+  <nav>
+    <a href="#art">ART</a>
+    <a href="#design">DESIGN</a>
+    <a href="#about">ABOUT</a>
+  </nav>
 </header>
+
+
+<main id="art" class="page-section">
+
+<div class="section-heading">01 — SELECTED ARTWORK</div>
 
 <div class="section">
   <img src="art1.jpg">
@@ -231,6 +477,204 @@
     <div class="desc">Pencil on paper, 36 x 42in.</div>
   </div>
 </div>
+
+</main>
+
+
+<section id="design" class="page-section">
+
+  <div class="section-heading">02 — DESIGN</div>
+
+
+  <!-- CAL FORMULA RACING PROJECT -->
+
+  <div class="design-project">
+
+    <div class="design-label">
+      CAL FORMULA RACING · 2026–27
+    </div>
+
+    <div class="design-title">
+      Sponsorship & Brand Design
+    </div>
+
+    <div class="design-description">
+      Sponsorship communications and visual identity work created for
+      Cal Formula Racing, UC Berkeley’s Formula SAE team. Developed in
+      collaboration with the Business & Operations subteam to communicate
+      the team’s engineering capabilities, competitive identity, and value
+      to prospective partners.
+    </div>
+
+    <div class="project-details">
+
+      <div class="project-detail">
+        <div class="project-detail-title">ROLE</div>
+        <div class="project-detail-text">
+          Graphic Designer<br>
+          Business & Operations
+        </div>
+      </div>
+
+      <div class="project-detail">
+        <div class="project-detail-title">DELIVERABLES</div>
+        <div class="project-detail-text">
+          Sponsorship packet<br>
+          Brand graphics
+        </div>
+      </div>
+
+      <div class="project-detail">
+        <div class="project-detail-title">ORGANIZATION</div>
+        <div class="project-detail-text">
+          Cal Formula Racing<br>
+          UC Berkeley
+        </div>
+      </div>
+
+    </div>
+
+    <div class="project-gallery">
+      <img
+        src="bfr1.jpg"
+        alt="BFR sponsorship packet cover"
+        loading="lazy"
+      >
+
+      <img
+        src="bfr2.jpg"
+        alt="BFR sponsorship packet spread"
+        loading="lazy"
+      >
+
+      <img
+        src="bfr3.jpg"
+        alt="BFR sponsorship packet page"
+        loading="lazy"
+      >
+      
+     <img
+        src="bfr4.jpg"
+        alt="BFR sponsorship packet contact"
+        loading="lazy"
+      >
+    </div>
+
+    <div class="project-note">
+      Selected work from a collaborative team project. Individual design
+      contributions are identified where appropriate.
+    </div>
+
+  </div>
+
+
+  <!-- SENIOR JACKET PROJECT -->
+
+  <div class="design-project">
+
+    <div class="design-label">
+      WESTERN ACADEMY OF BEIJING · 2025
+    </div>
+
+    <div class="design-title">
+      Senior Jacket Design
+    </div>
+
+    <div class="design-description">
+      A customizable varsity jacket concept created for the Western Academy
+      of Beijing Class of 2025. The design combines school colors, bilingual
+      typography, personalized names and initials, and national flags
+      representing the school’s international community.
+    </div>
+
+    <div class="project-details">
+
+      <div class="project-detail">
+        <div class="project-detail-title">DESIGNERS</div>
+        <div class="project-detail-text">
+          Lily Zhang<br>
+          Sophia P.
+        </div>
+      </div>
+
+      <div class="project-detail">
+        <div class="project-detail-title">PROJECT TYPE</div>
+        <div class="project-detail-text">
+          Apparel design<br>
+          Merchandise design
+        </div>
+      </div>
+
+      <div class="project-detail">
+        <div class="project-detail-title">DELIVERABLES</div>
+        <div class="project-detail-text">
+          Jacket concept<br>
+          Front, back and sleeve graphics
+        </div>
+      </div>
+
+    </div>
+
+    <div class="project-gallery">
+      <img
+        src="jacket1.jpg"
+        alt="WAB Class of 2025 senior jacket design board"
+        loading="lazy"
+      >
+
+      <img
+        src="jacket2.jpg"
+        alt="Front view of WAB senior jacket"
+        loading="lazy"
+      >
+
+      <img
+        src="jacket3.jpg"
+        alt="Back view and design details of WAB senior jacket"
+        loading="lazy"
+      >
+    </div>
+
+    <div class="project-note">
+      Co-designed with Sophia P. for the Western Academy of Beijing
+      graduating class.
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="about" class="page-section">
+
+  <div class="section-heading">03 — ABOUT</div>
+
+  <div class="about">
+    <h2>Artist and designer based in Berkeley, CA.</h2>
+
+    <p>
+      I’m Lily Zhang, an Art Practice and Economics student at UC Berkeley.
+      My work spans painting, illustration, visual identity, and brand
+      design. I’m particularly interested in the intersection of art,
+      culture, and commercial design.
+    </p>
+
+    <div class="contact-links">
+      <a href="mailto:lilyzhang135246@gmail.com">EMAIL ↗</a>
+
+      <a href="www.linkedin.com/in/lily-zhang-563a133b7" target="_blank">
+        LINKEDIN ↗
+      </a>
+
+    </div>
+  </div>
+
+</section>
+
+
+<footer>
+  © 2026 LILY ZHANG
+</footer>
 
 </body>
 </html>
