@@ -675,12 +675,41 @@
       culture, and commercial design.
     </p>
 
-    <div class="contact-links">
-      <a href="mailto:lilyzhang135246@gmail.com">EMAIL ↗</a>
+ <div class="contact-links">
 
-      <a href="www.linkedin.com/in/lily-zhang-563a133b7" target="_blank">
-        LINKEDIN ↗
-      </a>
+  <button
+    class="copy-email"
+    onclick="copyEmail(this)"
+    type="button"
+  >
+    COPY EMAIL ↗
+  </button>
+
+  <a
+    href="https://www.linkedin.com/in/lily-zhang-563a133b7"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    LINKEDIN ↗
+  </a>
+
+</div>
+
+<script>
+  function copyEmail(button) {
+    const email = "lilyzhang135246@gmail.com";
+
+    navigator.clipboard.writeText(email).then(() => {
+      button.textContent = "EMAIL COPIED ✓";
+
+      setTimeout(() => {
+        button.textContent = "COPY EMAIL ↗";
+      }, 2000);
+    });
+  }
+</script>
+
+</div>
 
     </div>
   </div>
