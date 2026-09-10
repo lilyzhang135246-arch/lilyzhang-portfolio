@@ -153,15 +153,18 @@
        /* Design project photo galleries */
     .project-gallery {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, max-content);
+      align-items: flex-start;
+      justify-items: start;
       gap: 15px;
       margin-top: 45px;
     }
 
     .project-gallery img {
-      width: 100%;
-      height: auto;
+      width: auto;
+      height: 320px;
       object-fit: contain;
+      justify-self: start;
       display: block;
       background: #151515;
       transition: transform 0.3s ease;
